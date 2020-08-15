@@ -1,0 +1,92 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.1"
+
+    defaultConfig {
+        applicationId "vn.com.vng.alphadriver"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            buildConfigField "String", "BASE_URL", '"https://pokeapi.co/api/v2/"'
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "BASE_URL", '"https://pokeapi.co/api/v2/"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+
+    //    Support library
+    implementation "androidx.core:core-ktx:$versions.coreKtx"
+    implementation "androidx.appcompat:appcompat:$versions.appCompat"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.constraintLayout"
+    testImplementation "junit:junit:$versions.jUnitTest"
+    androidTestImplementation "androidx.test.ext:junit:$versions.jUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$versions.espressoCore"
+
+    //    Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$versions.rxJavaAdapter"
+
+    //    Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$versions.moshi"
+    implementation "com.squareup.moshi:moshi-adapters:$versions.moshiAdapter"
+//    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+
+    //    Okhttp
+    implementation "com.squareup.okhttp3:logging-interceptor:$versions.okHttp3"
+
+
+    //Rx Java
+    implementation "io.reactivex.rxjava2:rxandroid:$versions.rxAndroid"
+    implementation "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+    implementation "com.jakewharton.rxbinding3:rxbinding:$versions.rxBinding"
+
+    //Dagger
+    implementation "com.google.dagger:dagger-android:$versions.daggerAndroid"
+    implementation "com.google.dagger:dagger-android-support:$versions.daggerAndroid"
+    implementation "com.google.dagger:dagger:$versions.dagger"
+    kapt "com.google.dagger:dagger-compiler:$versions.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$versions.dagger"
+
+//    //Kotlin coroutines
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version.kotlin_coroutines"
+//    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version.kotlin_coroutines"
+
+    //    Recyclerview
+    implementation "androidx.recyclerview:recyclerview:$versions.recyclerView"
+
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$versions.picasso"
+    implementation "com.squareup.okhttp:okhttp:$versions.okHttp"
+
+    //Lotite for animation
+    implementation "com.airbnb.android:lottie:$versions.lottie"
+
+
+    implementation project(':domain')
+    implementation project(':data')
+
+}

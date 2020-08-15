@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edtPokemon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:gravity="center"
+        android:hint="Type a pokemon name"
+        android:text="Ditto" />
+
+    <Button
+        android:id="@+id/btnFunc1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug Function 1" />
+
+    <Button
+        android:id="@+id/btnFunc2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug Function 2" />
+
+    <Button
+        android:id="@+id/btnFunc3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Debug Function 3" />
+
+    <Button
+        android:id="@+id/btnGoToApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Main" />
+
+</LinearLayout>

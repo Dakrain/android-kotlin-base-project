@@ -1,0 +1,77 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.versions = [
+            //lotlin
+            kotlin          : '1.3.72',
+            koin            : '2.1.6',
+
+            //rxJava
+            rxJava          : '2.2.19',
+            rxAndroid       : '2.1.1',
+            rxBinding       : '3.1.0',
+
+            //coroutines
+            kotlinCoroutines: ' "1.3.0"',
+            kolinAdapter    : '0.9.2',
+
+            //gson
+            gson            : '2.8.5',
+            inject          : '1',
+
+            //lottie
+            lottie          : '3.4.1',
+
+            //support library
+            recyclerView    : '1.1.0',
+            coreKtx         : '1.3.1',
+            appCompat       : '1.2.0',
+            constraintLayout: '1.1.3',
+            jUnit           : '1.1.1',
+            jUnitTest       : '4.13',
+            espressoCore    : '3.2.0',
+
+            //dagger
+            daggerAndroid   : '2.15',
+            dagger          : '2.28.3',
+
+            //okhttp
+            okHttp3         : '4.8.0',
+
+            //moshi
+            moshi           : '1.9.2',
+            moshiAdapter    : '1.8.0',
+
+            //picaso
+            picasso         : '2.5.2',
+            okHttp          : '2.7.5',
+
+            //retrofit
+            retrofit        : '2.9.0',
+            rxJavaAdapter   : '1.0.0',
+
+    ]
+
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.0.1"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

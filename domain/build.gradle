@@ -1,0 +1,16 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
+    implementation "io.reactivex.rxjava2:rxjava:$versions.rxJava"
+    implementation "javax.inject:javax.inject:$versions.inject"
+    implementation "com.google.code.gson:gson:$versions.gson"
+}
